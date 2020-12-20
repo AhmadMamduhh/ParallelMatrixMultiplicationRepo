@@ -113,7 +113,7 @@ int main(int argc, char** argv) {
 		MPI_Recv(&matrixOne, rows*MATRIX_SIZE, MPI_INT, source, 1, MPI_COMM_WORLD, &status);
 		MPI_Recv(&matrixTwo, MATRIX_SIZE*MATRIX_SIZE, MPI_INT, source, 1, MPI_COMM_WORLD, &status);
 
-		\\ Each worker thread calculates the multiplication of the part of the matrices it received using OpenMP parallelism and sends back the result to the master thread
+		// Each worker thread calculates the multiplication of the part of the matrices it received using OpenMP parallelism and sends back the result to the master thread
 		#pragma omp parallel private(k, i, j)
 		{
 			#pragma omp for

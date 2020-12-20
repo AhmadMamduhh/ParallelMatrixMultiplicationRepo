@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
 		MPI_Recv(&matrixOne, rows*MATRIX_SIZE, MPI_INT, source, 1, MPI_COMM_WORLD, &status);
 		MPI_Recv(&matrixTwo, MATRIX_SIZE*MATRIX_SIZE, MPI_INT, source, 1, MPI_COMM_WORLD, &status);
 
-		\\ Each worker thread calculates the multiplication of the part of the matrices it received and sends back the result to the master thread
+		// Each worker thread calculates the multiplication of the part of the matrices it received and sends back the result to the master thread
 		for (k = 0; k < MATRIX_SIZE; k++)
 			for (i = 0; i < rows; i++) {
 				for (j = 0; j < MATRIX_SIZE; j++)
